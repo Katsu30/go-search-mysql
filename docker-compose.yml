@@ -1,0 +1,12 @@
+version: "3"
+services:
+  go:
+    build: ./build
+    tty: true
+    ports: 
+      - "8080:8000"
+    volumes:
+      - type: bind
+        source: "./src"
+        target: "/go/src/app"
+    working_dir: /go/src/app
